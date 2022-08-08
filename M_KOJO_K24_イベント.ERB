@@ -83,14 +83,19 @@ RETURN 1
 @M_KOJO_ENCOUNTER_K24
 ;첫대면, 인사 타이밍
 ;TALENT 변경은 이쪽에서 부디.
-	PRINTFORMDW 「初めまして、あなたが藍様の言ってた人間？」
-	PRINTFORMDW 「最近変な外来人が、やってきたって聞いてるわ」
-	PRINTFORMDL 変なとは随分とした言いがかりだ。
-	PRINTFORMDW 「どんな人なのかと思ってたけど、割とふつーの人間なんだね」
-	PRINTFORMDW %CALLNAME:MASTER%は、とりあえず自分の名前を名乗る。
-	PRINTFORMW 「ふーん、ふーん？？」
-	PRINTFORMW 「私は橙。覚えておかなくて良いよ」
-	PRINTFORMDW 彼女は欠伸をしている。どうやら、あまりこちらに興味がないようだ……。
+	PRINTFORMDW 「처음 뵙겠습니다」
+	IF CFLAG:25:18 == 1
+		PRINTFORMDW 「당신이 란 님이 말씀하셨던 그 외래인 맞죠?」
+	ELSE
+		PRINTFORMDW 「당신이 이 아이들이 알려준 그 외래인 맞죠?」
+	ENDIF
+	PRINTFORMDW 「최근 수상한 외래인이 목격된다는 소문이 있어서」
+	PRINTFORMDL 이상하다니, 당치도 않은 트집이야.
+	PRINTFORMDW 「좀 더 무서울 줄 알았는데, 의외로 평범한 사람이였어...」
+	PRINTFORMDW %마스터는% 일단 자신의 이름을 첸에게 소개했다.
+	PRINTFORMW 「흐음, 흠?」
+	PRINTFORMW 「저는 첸. 굳이 기억 안 해도 상관 없어요」
+	PRINTFORMDW 그녀는, 아무래도 별로 이쪽에 관심이 없는 것 같다...
 RETURN 1
 
 ;※※※※※※※※※※※※※※※※※※※※※※※※※※
@@ -110,25 +115,28 @@ LOCAL = 1
 ;地の文
 CALL SPEVENT_MESSAGE_1(ARG,ARG:1)
 IF LOCAL
-	PRINTFORMW 「ありがとう、今日は楽しかったよ」
-	PRINTFORMDL 橙は素直にお礼を述べる。
-	PRINTFORMDW 不意に足を止める彼女にどうしたんだろうと、%CALLNAME:MASTER%は同じく足を止めた。
-	PRINTFORMW 「ねぇ、%CALLNAME:MASTER%は何かしてほしいことある？」
-	PRINTFORMDL 急な話だ。
-	PRINTFORMDW どうしたのか訊ねると、彼女ははにかんだ。
-	PRINTFORMW 「藍様が、楽しませてくれたらお礼をしろって言うので」
-	PRINTFORMDL なるほど、だったらキスしてほしいと冗談で言ってみた。
-	PRINTFORMDW 一瞬の静寂後、橙の顔が真っ赤になる。
-	PRINTFORMW 「き、キスって好きな人同士がやる？　うー……うー…………」
-	PRINTFORMDL 冗談だという前に襟元を掴まれる。
-	PRINTFORMDL 華奢な彼女からは想像できない力で、顔を引き寄せられた。
+	PRINTFORMW 「고마워. 오늘은 즐거웠어」
+	PRINTFORMDL 첸은 순순히 감사를 표했다.
+	PRINTFORMDW 느닷없이 발걸음을 멈추는 그녀를 보며, %마스터는% 무슨 일이냐고 물었다
+	PRINTFORMW 「저기, %마스터는% 뭔가 해줬으면 하는 일이 있어?」
+	PRINTFORMDL 뭐야, 갑자기.
+	PRINTFORMDW 너무 갑작스러운 질문에, 그녀에게 이유를 되물어보자
+	PRINTFORMW 「예전에 란 님이, 남이 나를 즐겁게 만들어줬다면 나도 남을 즐겁게 만들어줘야 한다고 하셨거든」
+	PRINTFORMDL 그래?
+	PRINTFORMDL 그 말을 듣고, %마스터는% 장난스럽게 키스가 갖고 싶다고 말했다.
+	PRINTFORMDW 한순간의 정적이 지난 뒤, 첸이 얼굴을 붉히며 말했다.
+	PRINTFORMW 「키, 키스라는 건 좋아하는 사람과만 하는 거라고...?　...그러니까-」
+	PRINTFORMDL 농담이었다고 말하기도 전에 그녀가 목덜미를 잡아당겼다.
+	PRINTFORMDL 일순간 반응도 하지 못한 채로, 그녀의 손에 끌려서-
 	PRINTFORMDW 
-	PRINTFORMDW 唇にやわらかい感触が当たる。
+	PRINTFORMDW 쪽!
+	PRINTFORMDW 
+	PRINTFORMDW 입술에 부드러운 감촉이 닿는다.
 	PRINTFORMDW
-	PRINTFORMDL 数分とも思える一瞬の後、橙は顔を離した
-	PRINTFORMW 「きょ、今日だけだからね！」
-	PRINTFORMDL 足早に%CALLNAME:MASTER%置いて去っていく彼女。
-	PRINTFORMDW 果たして、尻尾がピンと立ちっぱなしのことに彼女自身は気づいていたのだろうか。
+	PRINTFORMDL 얼마나 시간이 지났을까. 첸은 얼굴을 붉히며 거리를 벌리고는
+	PRINTFORMW 「오, 오늘만 해주는 거니까! 착각하지 마!」
+	PRINTFORMDL 라고 말하면서, %CALLNAME:MASTER%쪽은 아예 돌아보지도 않고 무작정 달려갔다.
+	PRINTFORMDW 과연 그녀의 꼬리가 기쁜 듯이 서있었다는 걸, 그녀는 깨닫고 있을까?
 	;키스캔슬 하고싶은 경우 다음을 개방
 	;TCVAR:키스캔슬 = 1
 ENDIF
@@ -155,23 +163,23 @@ IF LOCAL
 	LOCAL:1 = 1
 	;-------------------------------------------------
 	IF LOCAL:1 && ARG == 0
-		PRINTFORMW 「私、%CALLNAME:MASTER%に出会っておかしくなっちゃった……」
-		PRINTFORMW 帰り道、橙はポツリと呟く。
-		PRINTFORML 「%CALLNAME:MASTER%の会えないときは、心の奥がきゅーってなるの」
-		PRINTFORML 「泣きたくなるの」
-		PRINTFORML 「でも、%CALLNAME:MASTER%に会えたときは、暖かくなるの」
-		PRINTFORMW 橙の手は震えていた。声は震えていた。
-		PRINTFORML 胸元で自身の手をきゅっと結ぶ。
-		PRINTFORML こちらを見つめる目は、微かに濡れている。
-		PRINTFORMW 「最初、私に何が起こったのかわからなかった」
-		PRINTFORML 「怖くなって、藍様に訊いてみたの」
-		PRINTFORMW 彼女の口は開いて、すぐに閉じられる。
-		PRINTFORML まるで、その先を言うか迷うように瞳が揺れた。
-		PRINTFORMW 「……私、%CALLNAME:MASTER%のことが好き。……大好き」
-		PRINTFORML 友情としてではなく愛情として。そう、言外に語っている。
-		PRINTFORMW 「強いものがいっぱいいる幻想郷。私なんかじゃ頼りないと思うけど……」
-		PRINTFORMW 「紫様や藍様のようにはいかないけど……」
-		PRINTFORMW 「私のこと、愛してくれますか？」
+		PRINTFORMW 「저, %마스터를% 만난 뒤로 미쳐버린 것 같아요...」
+		PRINTFORMW 귀갓길에, 첸이 갑자기 말을 건넸다.
+		PRINTFORML 「%마스터를% 만날 수 없을 때는 마음속 깊이 우울해서」
+		PRINTFORML 「울고 싶어져요」
+		PRINTFORML 「하지만 %마스터를% 만날 때는 따뜻해져요」
+		PRINTFORMW 주황색 손은 떨리고 있었다.목소리는 떨리고 있었다.
+		PRINTFORML 가슴팍으로 자신의 손을 꼭 잡는다.
+		PRINTFORML 이쪽을 바라보는 눈은 희미하게 젖어 있다.
+		PRINTFORMW 「처음엔 제게 무슨 일이 일어났는지 몰랐어요」
+		PRINTFORML 「그래서 란 님에게도 물어봤었고」
+		PRINTFORML 「결국, 제가 왜 그랬는지 깨달아버렸어요」
+		PRINTFORMW 「……저, %마스터가% 좋아요... 너무 좋아요」
+		PRINTFORMW 우정이 아니라 애정으로서, 라고 말하진 않았지만
+		PRINTFORML 그녀의 진심은 분명 그러하다는 게 가슴 깊이 전해졌다
+		PRINTFORMW 「강한 것들이 넘쳐나는 이 환상향에서, 저 같은 건 그다지 의미가 없겠지만」
+		PRINTFORMW 「유카리 님보다도, 란 님보다도 더 무능하겠지만」
+		PRINTFORMW 「부디, 제 마음을 받아주시겠습니까?」
 		RETURN 1
 	ENDIF
 	;-------------------------------------------------
@@ -180,15 +188,15 @@ IF LOCAL
 	LOCAL:1 = 1
 	;-------------------------------------------------
 	IF LOCAL:1 && ARG == 1
-		PRINTFORML 「本当？　本当に、本当？」
-		PRINTFORMW 信じられないとでも言うように、橙が訊いてくる。
-		PRINTFORMW 本当だというともう一度訊いてくる。
-		PRINTFORMW そして、彼女の頬を涙が伝った。
-		PRINTFORML 「夢じゃないよね……。現実だよね……」
-		PRINTFORMW 夢じゃないよと、橙のことを抱きしめた。
-		PRINTFORMW 彼女は小さな肩を震わせ、%CALLNAME:MASTER%の胸の中で泣いている。
-		PRINTFORML 「うれしい……ありがとう。%CALLNAME:MASTER%様」
-		PRINTFORMW こちらを見上げ、涙目の彼女。それでも、可愛い笑顔を咲かせた。
+		PRINTFORML 「정말로?　저, 정말?!」
+		PRINTFORMW 믿지 못하겠다는 듯이 첸이 소리쳤다.
+		PRINTFORMW 진짜라고 대답해주자, 그녀의 뺨에서 한 줄기 이슬이 흘러내렸다
+		PRINTFORMW 그것은 안도와 기쁨의 이슬비였다
+		PRINTFORML 「꾸, 꿈은 아니겠지...」
+		PRINTFORMW 꿈이 아니라는 걸 확실하게 해주기 위해, 그녀를 끌어안았다.
+		PRINTFORMW 그녀는 작은 어깨를 들썩이며 %마스터를% 마주 포옹한 채로 가슴팍에 얼굴을 박은 채로 울고 있다.
+		PRINTFORML 「기뻐요... 감사합니다, %CALLNAME:MASTER% 님」
+		PRINTFORMW 이쪽을 올려다보며 눈물짓는 그녀. 그 얼굴에는 귀여운 행복의 미소가 남아있었다.
 		RETURN 1
 	ENDIF
 	;-------------------------------------------------
@@ -197,11 +205,11 @@ IF LOCAL
 	LOCAL:1 = 1
 	;-------------------------------------------------
 	IF LOCAL:1 && ARG == 2
-		PRINTFORML 「……そう、だよね」
-		PRINTFORMW 彼女はすぐに、顔をそむけた。
-		PRINTFORMW 涙は流していなかった。
-		PRINTFORML 「諦めない……諦めないから」
-		PRINTFORML 「%CALLNAME:MASTER%を振り向かせる。いつか必ず」
+		PRINTFORML 「……그래, 그렇겠죠」
+		PRINTFORMW 그녀는 이내 고개를 돌렸다.
+		PRINTFORMW 하지만 예상했다는 듯 눈물을 흘리진 않았다.
+		PRINTFORML 「포기하지 않아...아니, 포기 못 해」
+		PRINTFORML 「언젠가 %마스터가% 나를 되돌아보도록 만들겠어. 반드시!」
 		RETURN 1
 	ENDIF
 
